@@ -21,8 +21,11 @@
   },
   "permissions": [
     "activeTab", //activeTab指定tab作用，不对全局作用
-    "scripting"  //scripting 处理css
+    "scripting",  //scripting 处理css
+    "alarms", 
+    "storage"
   ], 
+  "host_permissions": ["https://extension-tips.glitch.me/*"],
   // 全局作用的脚本
   "content_scripts": [
     {
@@ -50,5 +53,9 @@
         "mac": "Command+B"
       }
     }
+  },
+  "minimum_chrome_version": "102",
+  "omnibox": {
+    "keyword": "api"
   }
 }

@@ -28,7 +28,7 @@ chrome.action.onClicked.addListener(async (tab) => { //需要activeTab权限获�
       text: nextState,
     });
 
-    //处理css
+    //chrome.scripting 脚本Api在service里执行js
     if (nextState === "ON") {
         // Insert the CSS file when the user turns the extension on
         await chrome.scripting.insertCSS({
