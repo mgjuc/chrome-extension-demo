@@ -1,3 +1,5 @@
+// import '../css/focus-mode.css' //不能引用css
+
 //chrome Api：runtime.onInstalled 脚本安装完毕
 chrome.runtime.onInstalled.addListener(() =>{
     console.log("安装完毕");
@@ -30,13 +32,14 @@ chrome.action.onClicked.addListener(async (tab) => { //需要activeTab权限获�
     if (nextState === "ON") {
         // Insert the CSS file when the user turns the extension on
         await chrome.scripting.insertCSS({
-          files: ["focus-mode.css"],
+          //这里的路径是从根目录开始
+          files: ['css/focus-mode.css'],
           target: { tabId: tab.id },
         });
       } else if (nextState === "OFF") {
         // Remove the CSS file when the user turns the extension off
         await chrome.scripting.removeCSS({
-          files: ["focus-mode.css"],
+          files: ["css/focus-mode.css"],
           target: { tabId: tab.id },
         });
       }

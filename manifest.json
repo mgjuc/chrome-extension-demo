@@ -37,7 +37,9 @@
   ],
   //监听事件
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "./services/service-index.js",
+    "type": "module"
+
   },
   //快捷键定义
   "commands": {
